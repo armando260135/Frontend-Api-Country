@@ -1,0 +1,261 @@
+/* Estilos para el contenedor */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centra horizontalmente las tarjetas */
+    align-items: flex-start;
+    /* Alinea las tarjetas en la parte superior del contenedor */
+}
+
+.banner {
+    background-color: aliceblue;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.banner-modal-actualizar {
+    text-align: center;
+}
+
+.banner img {
+    max-width: 60%;
+    height: 60%;
+}
+
+.banner-modal-actualizar img {
+    width: 150px;
+    height: auto;
+    margin-bottom: -35px;
+}
+
+.banner-modal-eliminar {
+    text-align: center;
+
+}
+.banner-modal-eliminar img {
+    width: 120px;
+    height: auto;
+}
+
+/* Estilos para la tarjeta (card) */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+    margin-bottom: 0px;
+    background-color: #fff;
+    text-align: center;
+    display: inline-block;
+    height: 400px; 
+}
+
+.card div {
+    margin: 5px 0;
+}
+
+.card img {
+    display: block;
+    margin-top: -5px;
+    width: 100%;
+    height: 170px;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-buttons {
+    margin-top: 15px;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.update-button,
+.delete-button,
+.cancel-button,
+.update-modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.update-button {
+    background-color: #0077FF;
+    color: #fff;
+}
+
+.update-button:hover {
+    background-color: #0055CC;
+}
+
+.update-modal-button {
+    background-color: #10dd21;
+    color: #fff;
+}   
+
+.update-modal-button:hover {
+    background-color: #0d9618;
+}
+
+.delete-button {
+    background-color: #FF3333;
+    color: #fff;
+}
+
+.delete-button:hover {
+    background-color: #FF0000;
+}
+
+.cancel-button {
+    background-color: #FF3333;
+    color: #fff;
+}
+
+.cancel-button:hover {
+    background-color: #FF0000;
+}
+
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    padding-right: 20px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+/* nuevo*/
+.card {
+    width: 330px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.text-body {
+    color: rgb(85, 79, 79);
+    text-align: start;
+    padding-left: 1.8rem;
+    padding-bottom: 0.2rem;
+}
+
+/*Text*/
+.text-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 0.6rem;
+    padding-bottom: 0.5rem;
+}
+
+/*Hover*/
+.card:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* form modal*/
+
+.group-input {
+    text-align: left;
+    margin: 10px 0;
+    padding-right: 25px; 
+  }
+  
+  .group-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .group-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  group-input .forgot-password {
+    text-align: left;
+    margin-top: 2px;
+    font-size: 0.8em; 
+
+}
+
+.group-input .forgot-password a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.group-input .forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el banner */
+.banner-modal-actualizar {
+    text-align: center;
+}
+
+/* Estilos para la imagen que se va a animar */
+.zooming-image {
+    animation: zoomIn 3s forwards; /* La animación dura 3 segundos */
+}
+
+/* Animación de zoom */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1); /* Tamaño original */
+    }
+    100% {
+        transform: scale(1.5); /* Tamaño después de la animación (ajusta según sea necesario) */
+    }
+}
+

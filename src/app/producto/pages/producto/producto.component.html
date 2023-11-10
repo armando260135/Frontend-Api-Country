@@ -1,0 +1,73 @@
+
+<div class="banner">
+    <!-- Contenido del banner, como texto, imágenes, etc. -->
+    <img src="https://userscontent2.emaze.com/images/dce14274-203c-45b9-8e35-06361594330f/9808e6592de95da99c7e11c9144c8936.png"
+        alt="Banner de descuento">
+</div>
+<div ngClass="grid">
+    <ng-container *ngIf="elementos.length > 0 ; else vacio">
+        <app-lista *ngFor="let p of elementos" class="card">
+            <div flags>
+                <img [ngSrc]="p.flags.png" width="300" height="800" />
+                <div name class="text-title">Country: {{p.name.common }}</div>
+                <div capital class="text-body">Capital: {{p.capital }}</div>
+                <div region class="text-body">Continente: {{p.region }}</div>
+                <div population class="text-body">Poblacion: {{p.population }}</div>
+            </div>
+            <div buttons class="card-buttons">
+                <button (click)="openModal('update')" class="update-button">Actualizar</button>
+                <button (click)="openModal('delete')" class="delete-button">Eliminar</button>
+            </div>
+        </app-lista>
+    </ng-container>
+    <ng-template #vacio>Actualmente no se encuentran paises</ng-template>
+</div>
+
+
+<div id="myModalActualizar" class="modal">
+    <div class="modal-content">
+        <form>
+            <div class="banner-modal-actualizar">
+                <!-- Contenido del banner, como texto, imágenes, etc. -->
+                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/happy-earth-8304873-6618318.png "
+                    alt="Banner de descuento">
+            </div>
+            <span class="close" (click)="closeModal()" id="closeModal">&times;</span>
+            <h1>{{ titleModalMessage }}</h1>
+            <div class="group-input">
+                <label for="text">Capital</label>
+                <input name="texto" id="text" type="text" placeholder="Ingresa la nueva capital" />
+            </div>
+            <div class="group-input">
+                <label for="text">Continente</label>
+                <input name="texto" id="text" type="text" placeholder="Ingresa el continente" />
+            </div>
+            <div class="group-input">
+                <label for="text">Poblacion</label>
+                <input name="texto" id="text" type="text" placeholder="Ingresa la nueva poblacion" />
+            </div>
+            <div buttons class="card-buttons">
+                <button class="update-modal-button">Actualizar</button>
+                <button class="cancel-button">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="myModalEliminar" class="modal">
+    <div class="modal-content">
+        <div class="banner-modal-eliminar">
+            <!-- Contenido del banner, como texto, imágenes, etc. -->
+            <img src="https://i.postimg.cc/SsyTXyFK/globe-removebg-preview.png" alt="Globe surprise"
+                class="zooming-image">
+        </div>
+        <span class="close" (click)="closeModal()" id="closeModal">&times;</span>
+        <h1>{{ titleModalMessage }}</h1>
+        <p style="text-align: center; font-size: large;">{{ modalMessage }}</p>
+
+        <div buttons class="card-buttons">
+            <button id="deleteCountry" (click)="deleteCountry()" class="cancel-button">Eliminar</button>
+        </div>
+    </div>
+</div>

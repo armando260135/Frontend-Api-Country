@@ -1,0 +1,43 @@
+<div class="login-card">
+    <div class="logo">
+        <img src="https://static.vecteezy.com/system/resources/previews/013/928/861/non_2x/illustration-of-flags-and-maps-of-the-g-20-countries-in-the-form-of-a-logo-on-a-globe-g20-top-twenty-economies-of-the-world-financial-and-economic-international-forum-png.png" alt="Logo de la App">
+    </div>
+    <form [formGroup]="form" (submit)="enviar()">
+        <ng-container *ngIf="showPasswordRecovery; else recoveryMessage">
+            <div class="group-input">
+                <label for="usuario">Usuario</label>
+                <input name="email" id="usuario" formControlName="email" type="email" placeholder="Ingresa tu usuario" />
+            </div>
+            <div class="group-input">
+                <label for="password">Contraseña</label>
+                <input name="password" id="password" type="password" formControlName="password" placeholder="Ingresa tu contraseña" />
+            </div>
+            <div class="group-input">
+                <a href="#" (click)="togglePasswordRecovery()">Recuperar Contraseña</a>
+            </div>
+            <button type="submit">Iniciar Sesion</button>
+
+        </ng-container>
+        <ng-template #recoveryMessage>
+            <div class="recovery-message">
+                <div class="group-input">
+                    <p>Anota la contraseña en algun lado para que no se te olvide</p>
+
+                    <label for="password">Nueva Contraseña</label>
+                    <input name="password" id="password" type="password" formControlName="password" placeholder="Ingresa tu nueva contraseña" />
+                </div>
+                <div class="group-input">
+                    <label for="password">Repite la Contraseña</label>
+                    <input name="password" id="password" type="password" formControlName="password" placeholder="Repite tu contraseña" />
+                </div>
+            </div>
+
+            <div class="group-input">
+                <a href="#" (click)="togglePasswordRecovery()">Quiero Loguearme</a>
+            </div>
+
+            <button type="submit">Cambiar Contraseña</button>
+        </ng-template>
+      
+    </form>
+</div>
